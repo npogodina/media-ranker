@@ -1,0 +1,31 @@
+poodr:
+  title: Practical Object Oriented Design in Ruby
+  category: book
+  creator: Sandi Metz
+  description: A good book on programming
+  publication_year: 2012
+wheel_1:
+  title: The Eye of The World
+  category: book
+  creator: Robert Jordan
+  description: Book 1 of the Wheel of Time
+  publication_year: 1990
+wheel_2:
+  title: The Great Hunt
+  category: book
+  creator: Robert Jordan
+  description: Book 2 of the Wheel of Time
+  publication_year: 1990
+resist:
+  title: Resist
+  category: album
+  creator: Within Temptation
+  description: I even went to their concert!
+  publication_year: 2019
+enigma:
+  title: The Imitation Game
+  category: movie
+  creator: Morten Tyldum
+  description: In 1939, newly created British intelligence agency MI6 recruits Cambridge mathematics alumnus Alan Turing (Benedict Cumberbatch) to crack Nazi codes, including Enigma -- which cryptanalysts had thought unbreakable.
+  publication_year: 2014
+
