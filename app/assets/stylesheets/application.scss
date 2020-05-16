@@ -64,8 +64,6 @@ h2 {
     }
 
     &__button {
-      background-color: #26A69A;
-      border-color: #26A69A;
       margin: 0.2rem 1rem;
     }
 
@@ -78,6 +76,22 @@ h2 {
 .btn-primary {
   background-color: #26A69A;
   border-color: #26A69A;
+
+  &:hover {
+    background-color: #00796B;
+    border-color: #00796B;
+  }
+
+  &:active {
+    background-color: #00796B;
+    border-color: #00796B;
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: #00796B;
+    border-color: #00796B;
+  }
 }
+
 
 
