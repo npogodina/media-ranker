@@ -6,16 +6,15 @@ class WorksController < ApplicationController
     @works = Work.all
   end
 
-  # def show
-  #   driver_id = params[:id]
-  #   @driver = Driver.find_by(id: driver_id)
-  #   if @driver.nil?
-  #     head :not_found
-  #     return
-  #   end
+  def show
+    @work = Work.find_by(id: params[:id])
+    if @work.nil?
+      head :not_found
+      return
+    end
 
-  #   @trips = @driver.trips
-  # end
+    # @trips = @work.trips
+  end
 
   def new
     @work = Work.new
