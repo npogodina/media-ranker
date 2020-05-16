@@ -10,6 +10,44 @@
   </head>
 
   <body>
+    <header class="app-header">
+      <h1 class="app-header__header">
+        <%= link_to "Media Ranker", works_path, class: "" %>
+        <small>Ranking the Best of Everything</small> 
+      </h1>
+
+      <nav class="navbar navbar-expand-lg app-header__nav">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          MENU
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to "View top media", works_path, class: "nav-link app-header__nav__item" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "View all media", works_path, class: "nav-link app-header__nav__item" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Add a new work", new_work_path, class: "nav-link app-header__nav__item" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "View all users", works_path, class: "nav-link app-header__nav__item" %>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <%= link_to "View top media", works_path, class: "btn btn-primary app-header__nav__button" %>    
+            <%= link_to "View top media", works_path, class: "btn btn-primary app-header__nav__button" %>    
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
+
     <%= yield %>
   </body>
 </html>
