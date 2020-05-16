@@ -10,4 +10,6 @@
   <h2>Movies</h2>
   <%= render partial: "works_table", locals: { work_type: @movies } %>
 
+  <%= link_to "View top media", works_path, class: "btn btn-primary" %>    
+  <%= link_to "Add a new work", works_path, class: "btn btn-primary" %>    
 </div>
