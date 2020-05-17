@@ -54,21 +54,21 @@ class WorksController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @driver = Driver.find_by(id: params[:id])
+  def destroy
+    @work = Work.find_by(id: params[:id])
 
-  #   if @driver.nil?
-  #     head :not_found
-  #     return
-  #   end
+    if @work.nil?
+      head :not_found
+      return
+    end
 
-  #   @driver.destroy
+    @work.destroy
 
-  #   redirect_to drivers_path
-  #   return
-  # end
+    redirect_to works_path
+    return
+  end
 
-  # private
+  private
 
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
