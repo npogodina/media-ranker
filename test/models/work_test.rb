@@ -55,5 +55,14 @@ describe Work do
       result = exciting_movie.valid?
       expect(result).must_equal true
     end
+
+    it "is invalid if the category is not one of three options: book, album, movie" do
+      work = Work.new(
+        category: "gardening book",
+        title: "Floret Farm's Cut Flower Garden"
+        )
+        result = work.valid?
+        expect(result).must_equal false
+    end
   end
 end
