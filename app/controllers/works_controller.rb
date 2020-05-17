@@ -31,14 +31,14 @@ class WorksController < ApplicationController
     end
   end
 
-  # def edit
-  #   @driver = Driver.find_by(id: params[:id])
+  def edit
+    @work = Work.find_by(id: params[:id])
 
-  #   if @driver.nil?
-  #     head :not_found
-  #     return
-  #   end
-  # end
+    if @work.nil?
+      head :not_found
+      return
+    end
+  end
 
   # def update
   #   @driver = Driver.find_by(id: params[:id])
