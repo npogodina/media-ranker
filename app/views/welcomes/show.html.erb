@@ -1,9 +1,14 @@
-<section>
-  <h2>Media Spotlight: </h2>
+<section class="pt-2 pr-3 pl-3 pb-3 spotlight">
+  <h2>
+    <span>Media Spotlight:</span>
+    <%= link_to "#{@spotlight.title}", work_path(@spotlight), class: "" %> 
+    by 
+    <%= @spotlight.creator %> </h2>
+  <p> Publication year: <%= @spotlight.publication_year %>. <%= @spotlight.description %> </p>
 </section>
 
-<section>
-  <div class="container">
+<section class="pt-5 top-10">
+  <div class="">
     <div class="row">
       <div class="col-md">
         <h2>Top Movies</h2>

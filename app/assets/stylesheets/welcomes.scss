@@ -1,3 +1,35 @@
 // Place all the styles related to the Welcomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.spotlight {
+  border-bottom: 1px rgb(230, 228, 228) solid;
+
+  & h2 span {
+    color: black;
+  }
+
+  & h2 a {
+    text-decoration: underline; 
+  }
+}
+
+.top-10 {
+  & h2 {
+    border-bottom: 2px solid #B2DFDB;
+  }
+
+  & ul {
+    list-style: none;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  
+    & li {
+      padding-bottom: 1rem;
+
+      & small {
+        color: slategray;
+      }
+    }
+  }
+}

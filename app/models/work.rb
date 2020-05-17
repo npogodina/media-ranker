@@ -4,6 +4,10 @@ class Work < ApplicationRecord
   validates_inclusion_of :category, :in => ["book", "album", "movie"]
 
   def self.top_ten(category)
-    top_ten= Work.where(category: category).order(:publication_year).limit(3)
+    top_ten = Work.where(category: category).order(:publication_year).limit(3)
+  end
+
+  def self.spotlight
+    spoltight = Work.order(:publication_year).first
   end
 end

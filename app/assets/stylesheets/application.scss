@@ -33,6 +33,15 @@ h2 {
   color: #26A69A;
 }
 
+a {
+  color: #26A69A;
+
+  &:hover {
+    color: #00796B;
+    text-decoration: none;
+  }
+}
+
 .app-header {
   text-align: center;
   padding: 2rem 1rem 0.5rem 1rem;
