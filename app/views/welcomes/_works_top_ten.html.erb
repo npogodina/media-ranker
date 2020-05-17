@@ -1,0 +1,11 @@
+<ul>
+  <% work_type.each do |work| %>
+    <li>
+      <h4> 
+        <%= link_to work.title, work_path(work) %>
+        <small>by <%= work.creator %></small>
+      </h4>
+      <p>99 votes</p>
+    </li>
+  <% end %>
+</ul>

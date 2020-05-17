@@ -1,0 +1,22 @@
+<section>
+  <h2>Media Spotlight: </h2>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <h2>Top Movies</h2>
+        <%= render partial: "works_top_ten", locals: { work_type: @movies } %>
+      </div>
+      <div class="col-md">
+        <h2>Top Books</h2>
+        <%= render partial: "works_top_ten", locals: { work_type: @books } %>
+      </div>
+      <div class="col-md">
+        <h2>Top Albums</h2>
+        <%= render partial: "works_top_ten", locals: { work_type: @albums } %>
+      </div>
+    </div>
+  </div>
+</section>
