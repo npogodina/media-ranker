@@ -1,7 +1,7 @@
 class WelcomesController < ApplicationController
   def show
-    @albums = Work.where(category: "album")
-    @books = Work.where(category: "book")
-    @movies = Work.where(category: "movie")
+    @top_albums = Work.top_ten("album")
+    @top_books = Work.top_ten("book")
+    @top_movies = Work.top_ten("movie")
   end
 end
