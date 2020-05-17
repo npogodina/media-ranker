@@ -4,12 +4,12 @@
   <p>Published: <%= @work.publication_year%> </p>
   <p> <%= @work.description %> </p>
   <%= link_to "Back to media ranks", works_path, class: "btn btn-primary" %>    
-  <%= link_to "Edit", works_path, class: "btn btn-primary" %>    
+  <%= link_to "Edit", edit_work_path(@work), class: "btn btn-primary" %>    
   <%= link_to "Upvote", works_path, class: "btn btn-primary" %>    
   <%= link_to "Delete", works_path, class: "btn btn-danger" %>    
 </section>
 
-<section>
+<section class="mt-5">
   <h3>999 Votes for this <%= @work.category.capitalize %></h3>
   <table class="table">
     <thead>
