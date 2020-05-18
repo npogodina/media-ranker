@@ -95,10 +95,27 @@ describe Work do
         Work.top_ten("video-game")
       }.must_raise ArgumentError
     end
-
   end
 
   describe "spotlight" do
+    it "return an instance of Work" do
+      spotlight = Work.spotlight
+      expect(spotlight).must_be_instance_of Work
+    end
 
+    it "returns nil if there are no works in the database yet" do
+      works = Work.all
+      works.each do |work|
+        work.destroy
+      end
+
+      works = Work.all
+      expect(works).must_be_empty
+      expect(Work.spotlight).must_be_nil
+    end
+
+    it "returns a work with a highest rating" do
+      # TODO
+    end
   end
 end
