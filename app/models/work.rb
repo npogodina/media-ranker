@@ -4,6 +4,10 @@ class Work < ApplicationRecord
   validates_inclusion_of :category, :in => ["book", "album", "movie"]
 
   def self.top_ten(category)
+    unless ["album", "movie", "book"].include?(category)
+      raise ArgumentError.new("Unsupported category")
+    end
+    
     top_ten = Work.where(category: category).order(:publication_year).limit(3)
   end
 
