@@ -16,6 +16,54 @@ wheel_2:
   creator: Robert Jordan
   description: Book 2 of the Wheel of Time
   publication_year: 1990
+wheel_3:
+  title: The Dragon Reborn
+  category: book
+  creator: Robert Jordan
+  description: Book 3 of the Wheel of Time
+  publication_year: 1991
+wheel_4:
+  title: The Shadow Rising
+  category: book
+  creator: Robert Jordan
+  description: Book 4 of the Wheel of Time
+  publication_year: 1992
+wheel_5:
+  title: The Fires of Heaven
+  category: book
+  creator: Robert Jordan
+  description: Book 5 of the Wheel of Time
+  publication_year: 1993
+wheel_6:
+  title: Lord of Chaos
+  category: book
+  creator: Robert Jordan
+  description: Book 6 of the Wheel of Time
+  publication_year: 1994
+wheel_7:
+  title: A Crown of Swords
+  category: book
+  creator: Robert Jordan
+  description: Book 7 of the Wheel of Time
+  publication_year: 1996
+wheel_8:
+  title: The Path of Daggers
+  category: book
+  creator: Robert Jordan
+  description: Book 8 of the Wheel of Time
+  publication_year: 1998
+wheel_9:
+  title: Winter's Heart
+  category: book
+  creator: Robert Jordan
+  description: Book 9 of the Wheel of Time
+  publication_year: 2000
+wheel_10:
+  title: Crossroads of Twilight
+  category: book
+  creator: Robert Jordan
+  description: Book 10 of the Wheel of Time
+  publication_year: 2003
 resist:
   title: Resist
   category: album
