@@ -90,5 +90,15 @@ describe Work do
       # TODO
     end
 
+    it "raises an exception if category is not allowed" do
+      expect {
+        Work.top_ten("video-game")
+      }.must_raise ArgumentError
+    end
+
+  end
+
+  describe "spotlight" do
+
   end
 end
