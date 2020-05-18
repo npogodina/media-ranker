@@ -65,4 +65,30 @@ describe Work do
         expect(result).must_equal false
     end
   end
+
+  describe "top_ten" do
+    it "returns a collection of no more than 10 works from a specified category" do
+      top_books = Work.top_ten("book")
+      expect(top_books.length).must_be :<, 11
+      
+      top_books.each do |book|
+        expect(book.category).must_equal "book"
+      end
+    end
+
+    it "returns an empty collection if there are no works in a specified category" do
+      enigma = works(:enigma)
+      enigma.destroy
+      movies = Work.where(category: "movie")
+      expect(movies).must_be_empty
+
+      top_movies = Work.top_ten("movie")
+      expect(top_movies).must_be_empty
+    end
+
+    it "return a collection sorted by rating in descending order" do
+      # TODO
+    end
+
+  end
 end
