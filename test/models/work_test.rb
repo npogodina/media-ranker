@@ -86,7 +86,7 @@ describe Work do
       expect(top_movies).must_be_empty
     end
 
-    it "return a collection sorted by rating in descending order" do
+    it "returns a collection sorted by rating in descending order" do
       # TODO
     end
 
