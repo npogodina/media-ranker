@@ -3,7 +3,7 @@
   <p>Created by: <%= @work.creator %> </p>
   <p>Published: <%= @work.publication_year%> </p>
   <p> <%= @work.description %> </p>
-  <%= link_to "Back to media ranks", works_path, class: "btn btn-primary" %>    
+  <%= link_to "Back to media ranks", welcome_path, class: "btn btn-primary" %>    
   <%= link_to "Edit", edit_work_path(@work), class: "btn btn-primary" %>    
   <%= link_to "Upvote", works_path, class: "btn btn-primary" %>    
   <%= link_to "Delete", work_path(@work), method: :delete, data: {confirm: "Delete #{@work.title}?"}, class: "btn btn-danger" %>
