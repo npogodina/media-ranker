@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root to: "welcomes#show", as: "welcome_path"
   resources :works
+  resource :welcome, only: :show
+
+  root to: "welcomes#show", as: "welcome_path"
 end
