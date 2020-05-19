@@ -1,0 +1,9 @@
+<h2>Log In</h2>
+<%= form_with model: @user, class: 'login__form', url: login_path do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <%= f.submit "Log In", class: "btn btn-primary" %>
+<% end %>
