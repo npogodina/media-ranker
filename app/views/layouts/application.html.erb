@@ -49,6 +49,16 @@
 
     </header>
 
+   
+    <section>
+      <% flash.each do |name, message| %>
+        <div class="alert alert-success mt-5">
+          <%= message %>
+        </div>
+      <% end %>
+    </section>
+    
+
     <% if @work && @work.errors.any? %> 
       <div class="alert alert-warning">
         <ul class="errors">
