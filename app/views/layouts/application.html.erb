@@ -49,28 +49,23 @@
 
     </header>
 
-   
     <section>
       <% flash.each do |name, message| %>
-        <div class="alert alert-success mt-5">
-          <%= message %>
-        </div>
+        <div class="<%= flash_class(name) %> mt-4">
+          <%= message %> 
+          <% if name == "error" && @work && @work.errors.any? %> 
+            <ul>
+              <% @work.errors.each do |column, message| %>
+                <li>
+                  <strong><%= column.capitalize %></strong> <%= message %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>  
       <% end %>
     </section>
     
-
-    <% if @work && @work.errors.any? %> 
-      <div class="alert alert-warning">
-        <ul class="errors">
-          <% @work.errors.each do |column, message| %>
-            <li>
-              <strong><%= column.capitalize %></strong> <%= message %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <main>
       <%= yield %>
     </main>
