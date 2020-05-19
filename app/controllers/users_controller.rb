@@ -28,9 +28,14 @@ class UsersController < ApplicationController
   end
 
   def logout
-    session[:user_id] = nil
-    flash[:success] = "Successfully logged out"
-    redirect_to welcome_path
-    return
+    if session[:user_id]
+      session[:user_id] = nil
+      flash[:success] = "Successfully logged out"
+      redirect_to welcome_path
+      return
+    else
+      flash[:error] = "How can you log out if you're not logged in?"
+      return
+    end
   end
 end
