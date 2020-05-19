@@ -27,7 +27,8 @@ class UsersController < ApplicationController
       @user = User.new(name: name)
       
       unless @user.save
-        flash.now[:error] = "A problem occurred: could not log in"
+        error_messages = @user.errors.full_messages.map { |message| "<li>#{message}</li>" }.join
+        flash.now[:error] = "A problem occurred: could not log in. <ul>#{error_messages}</ul>".html_safe
         render :login_form
         return
       end
@@ -38,18 +39,11 @@ class UsersController < ApplicationController
     end
   
     redirect_to root_path
-    return
   end
 
   def logout
-    if session[:user_id]
-      session[:user_id] = nil
-      flash[:success] = "Successfully logged out"
-      redirect_to root_path
-      return
-    else
-      flash[:error] = "How can you log out if you're not logged in?"
-      return
-    end
+    session[:user_id] = nil
+    flash[:success] = "Successfully logged out"
+    redirect_to root_path
   end
 end
