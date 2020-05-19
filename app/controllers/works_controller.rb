@@ -26,7 +26,8 @@ class WorksController < ApplicationController
       redirect_to work_path(@work)
       return
     else
-      flash.now[:error] = "A problem occured. Could not create #{@work.category}" 
+      error_messages = @work.errors.full_messages.map { |message| "<li>#{message}</li>" }.join
+      flash.now[:error] = "A problem occured. Could not create #{@work.category}. <ul>#{error_messages}</ul>".html_safe
       render :new 
       return
     end
