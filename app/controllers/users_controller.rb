@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       flash[:success] = "Successfully created new user #{name} with ID #{user.id}"
     end
   
-    redirect_to welcome_path
+    redirect_to root_path
     return
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if session[:user_id]
       session[:user_id] = nil
       flash[:success] = "Successfully logged out"
-      redirect_to welcome_path
+      redirect_to root_path
       return
     else
       flash[:error] = "How can you log out if you're not logged in?"
