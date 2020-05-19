@@ -66,8 +66,8 @@ class WorksController < ApplicationController
     end
 
     @work.destroy
-
-    redirect_to works_path
+    flash[:success] = "Successfully deleted #{@work.category} #{@work.id}" 
+    redirect_to welcome_path
     return
   end
 
