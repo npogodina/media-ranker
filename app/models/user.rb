@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :votes, order: 'created_at'
-  
+  has_many :votes
+
   validates :name, presence: true
 end
