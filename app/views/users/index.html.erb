@@ -12,7 +12,7 @@
       
         <tr class="list-group-item-action">
           <td> <%= link_to user.name, user_path(user) %> </td>
-          <td> 99 </td>
+          <td> <%= user.votes.count %> votes </td>
           <td> <%= user.created_at.strftime("%b %d, %Y") %> </td>
         </tr>
       

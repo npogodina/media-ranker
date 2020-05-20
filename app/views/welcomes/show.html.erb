@@ -4,7 +4,7 @@
     <%= link_to "#{@spotlight.title}", work_path(@spotlight), class: "" %> 
     by 
     <%= @spotlight.creator %> </h2>
-  <p> Publication year: <%= @spotlight.publication_year %>. <%= @spotlight.description %> </p>
+  <p> <%= @spotlight.votes.count %> votes - <%= @spotlight.description %> </p>
 </section>
 
 <section class="pt-5 top-10">

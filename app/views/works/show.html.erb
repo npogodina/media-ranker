@@ -10,7 +10,7 @@
 </section>
 
 <section class="mt-5">
-  <h3>999 Votes for this <%= @work.category.capitalize %></h3>
+  <h3><%= @work.votes.count %> Votes for this <%= @work.category.capitalize %></h3>
   <table class="table">
     <thead>
       <tr>

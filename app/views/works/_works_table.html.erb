@@ -12,7 +12,7 @@
     <% work_type.each do |work| %>
       
         <tr class="list-group-item-action">
-          <th scope="row"> 1 </th>
+          <th scope="row"> <%= work.votes.count %> </th>
           <td> <%= link_to work.title, work_path(work) %> </td>
           <td> <%= work.creator %> </td>
           <td> <%= work.publication_year %> </td>
