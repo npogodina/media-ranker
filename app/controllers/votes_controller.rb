@@ -25,5 +25,7 @@ class VotesController < ApplicationController
     else
       flash.now[:error] = "A problem occured. Could not create register vote."
     end
+
+    redirect_back(fallback_location: root_path)
   end
 end
