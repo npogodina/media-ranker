@@ -5,5 +5,6 @@ class WelcomesController < ApplicationController
     @top_movies = Work.top_ten("movie")
 
     @spotlight = Work.spotlight
+    @user = User.find_by(id: session[:user_id])
   end
 end
