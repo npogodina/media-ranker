@@ -26,7 +26,7 @@ class WorksController < ApplicationController
       redirect_to work_path(@work)
     else
       error_messages = @work.errors.full_messages.map { |message| "<li>#{message}</li>" }.join
-      flash.now[:error] = "A problem occured. Could not create #{@work.category}. <ul>#{error_messages}</ul>".html_safe
+      flash.now[:error] = "A problem occured. Could not create #{@work.category}. <ul>#{error_messages}</ul>"
       render :new 
     end
   end
@@ -48,7 +48,7 @@ class WorksController < ApplicationController
       redirect_to work_path(params[:id])
     else 
       error_messages = @work.errors.full_messages.map { |message| "<li>#{message}</li>" }.join
-      flash.now[:error] = "A problem occured. Could not update #{@work.category}. <ul>#{error_messages}</ul>".html_safe
+      flash.now[:error] = "A problem occured. Could not update #{@work.category}. <ul>#{error_messages}</ul>"
       render :edit
     end
   end

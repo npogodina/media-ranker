@@ -28,14 +28,14 @@ class UsersController < ApplicationController
       
       unless @user.save
         error_messages = @user.errors.full_messages.map { |message| "<li>#{message}</li>" }.join
-        flash.now[:error] = "A problem occurred: could not log in. <ul>#{error_messages}</ul>".html_safe
+        flash.now[:error] = "A problem occurred: could not log in. <ul>#{error_messages}</ul>"
         render :login_form
         return
       end
 
       @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Successfully created new user #{name} with ID #{user.id}"
+      flash[:success] = "Successfully created new user #{name} with ID #{@user.id}"
     end
   
     redirect_to root_path

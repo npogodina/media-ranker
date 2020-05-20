@@ -16,6 +16,12 @@ class VotesController < ApplicationController
       return
     end
 
+    # if user.works.include? work
+    #   flash[:error] = "A problem occured. Could not upvote."
+    #   redirect_back(fallback_location: root_path)
+    #   return
+    # end
+
     @vote = Vote.new(
       user_id: user.id,
       work_id: work.id
@@ -24,7 +30,14 @@ class VotesController < ApplicationController
     if @vote.save
       flash[:success] = "Successfully upvoted!" 
     else
-      flash.now[:error] = "A problem occured. Could not create register vote."
+      error_messages = @vote.errors.full_messages.map { |message| 
+        if message == "Work has already been taken"
+          "<li>user: has already voted for this work</li>" 
+        else
+          "<li>#{message}</li>" 
+        end
+      }.join
+      flash[:error] = "A problem occured. Could not upvote. <ul>#{error_messages}</ul>"
     end
 
     redirect_back(fallback_location: root_path)
