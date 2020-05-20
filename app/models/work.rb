@@ -10,7 +10,8 @@ class Work < ApplicationRecord
       raise ArgumentError.new("Unsupported category")
     end
 
-    top_ten = Work.where(category: category).order(:publication_year).limit(10)
+    top_ten = Work.where(category: category).left_joins(:votes).group("works.id").order('count(votes.id) DESC').limit(10)
+    # top_ten = Work.where(category: category).order(:publication_year).limit(10)
   end
 
   def self.spotlight
