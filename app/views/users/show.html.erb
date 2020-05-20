@@ -15,6 +15,16 @@
     </thead>
     <tbody>
       
+      <% @user.votes.each do |vote| %>
+        <tr>
+          <th scope="col"> <%= vote.work.title %> </th>
+          <td> <%= vote.work.creator %> </td>
+          <td> <%= vote.work.publication_year %> </td>
+          <td> <%= vote.work.category %> </td>
+          <td> <%= vote.created_at.strftime("%b %d, %Y") %> </td>
+        </tr>
+      <% end %>
+      
     </tbody>
   </table>
 </section>
