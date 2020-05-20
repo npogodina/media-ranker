@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :works
+  post '/works/:id/upvote', to: 'votes#create', as: 'upvote'
   
   resource :welcome, only: :show
   root to: "welcomes#show"

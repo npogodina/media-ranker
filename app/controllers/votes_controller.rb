@@ -8,7 +8,8 @@ class VotesController < ApplicationController
     end
     # if voted already? (has many-through relationship)
 
-    work = Work.find_by(id: params[:work_id])
+    work = Work.find_by(id: params[:id])
+    
     if work.nil?
       flash[:error] = "A problem occured. We couldn't find this work."
       redirect_back(fallback_location: root_path)
