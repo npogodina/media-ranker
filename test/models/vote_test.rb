@@ -34,4 +34,28 @@ describe Vote do
     end
   end
 
+  describe "relations" do
+    it "has a work" do
+      vote = votes(:vote_1)
+      expect(vote.work).must_equal works(:wheel_1)
+    end
+
+    it "has a user" do
+      vote = votes(:vote_1)
+      expect(vote.user).must_equal users(:nataliya)
+    end
+
+    it "can set the work" do
+      vote = Vote.new(user: users(:nataliya))
+      vote.work = works(:wheel_3)
+      expect(vote.work_id).must_equal works(:wheel_3).id
+    end
+
+    it "can set the user" do
+      vote = Vote.new(work: works(:wheel_3))
+      vote.user = users(:cody)
+      expect(vote.user_id).must_equal users(:cody).id
+    end
+  end
+
 end
