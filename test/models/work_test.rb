@@ -66,6 +66,42 @@ describe Work do
     end
   end
 
+  describe "sort_by_votes" do
+    it "return all works from a specified category" do
+      books_num = Work.where(category: "book").count
+      books = Work.sort_by_votes("book")
+      expect(books.length).must_equal books_num
+
+      books.each do |book|
+        expect(book.category).must_equal "book"
+      end
+    end
+
+    it "returns an empty collection if there are no works in a specified category" do
+      enigma = works(:enigma)
+      enigma.destroy
+      movies = Work.where(category: "movie")
+      expect(movies).must_be_empty
+
+      sorted_movies = Work.sort_by_votes("movie")
+      expect(sorted_movies).must_be_empty
+    end
+
+    it "returns a collection sorted by rating in descending order" do
+
+    end
+
+    it "orders a collection by id in case of a tie between votes" do
+
+    end
+
+    it "raises an exception if category is not allowed" do
+      expect {
+        Work.sort_by_votes("video-game")
+      }.must_raise ArgumentError
+    end 
+  end
+
   describe "top_ten" do
     it "returns a collection of no more than 10 works from a specified category" do
       top_books = Work.top_ten("book")
