@@ -1,8 +1,8 @@
 class WorksController < ApplicationController
   def index
-    @albums = Work.where(category: "album")
-    @books = Work.where(category: "book")
-    @movies = Work.where(category: "movie")
+    @albums = Work.sort_by_votes("album")
+    @books = Work.sort_by_votes("book")
+    @movies = Work.sort_by_votes("movie")
   end
 
   def show
@@ -11,8 +11,6 @@ class WorksController < ApplicationController
       head :not_found
       return
     end
-
-    # @trips = @work.trips
   end
 
   def new
