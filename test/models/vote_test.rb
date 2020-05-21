@@ -57,4 +57,16 @@ describe Vote do
       expect(vote.user_id).must_equal users(:cody).id
     end
   end
+
+  describe "default order" do
+    it "orders users by timestamp created by default - in ascending order" do
+      votes = Vote.all
+
+      i = 0
+      while i < votes.length - 1
+        expect(votes[i].created_at).must_be :<=, votes[i + 1].created_at
+        i += 1
+      end
+    end
+  end
 end
