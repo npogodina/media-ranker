@@ -57,5 +57,4 @@ describe Vote do
       expect(vote.user_id).must_equal users(:cody).id
     end
   end
-
 end

@@ -41,4 +41,16 @@ describe User do
       end
     end
   end
+
+  describe "default order" do
+    it "orders users by timestamp created by default - in ascending order" do
+      users = User.all
+
+      i = 0
+      while i < users.length - 1
+        expect(users[i].created_at).must_be :<=, users[i + 1].created_at
+        i += 1
+      end
+    end
+  end
 end
