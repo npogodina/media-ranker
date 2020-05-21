@@ -66,6 +66,24 @@ describe Work do
     end
   end
 
+  describe "relations" do
+    it "has many votes" do
+      wheel_1 = works(:wheel_1)
+      expect(wheel_1.votes).must_be_kind_of Enumerable
+
+      wheel_1.votes.each do |vote|
+        expect(vote).must_be_instance_of Vote
+      end
+    end
+
+    it "when destroyed gets related votes destroyed as well" do
+      wheel_1 = works(:wheel_1)
+      expect(wheel_1.votes).must_include (votes(:vote_1))
+      wheel_1.destroy
+      expect(Vote.find_by(work: works(:wheel_1))).must_be_nil
+    end
+  end
+
   describe "sort_by_votes" do
     it "return all works from a specified category" do
       books_num = Work.where(category: "book").count
