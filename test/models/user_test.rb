@@ -1,7 +1,26 @@
 require "test_helper"
 
 describe User do
-  # it "does a thing" do
-  #   value(1+1).must_equal 2
-  # end
+
+  describe "validations" do
+    it "is valid with a name" do
+      user = User.new(name: "Evelynna")
+      result = user.valid?
+      expect(result).must_equal true
+    end
+
+    it "is is invalid without a name" do
+      user = User.new(name: "")
+      result = user.valid?
+      expect(result).must_equal false
+    end
+
+    it "should have a unique name" do
+      user = User.new(name: "Nataliya")
+      result = user.valid?
+      expect(result).must_equal false
+    end
+  end
+
+  
 end
