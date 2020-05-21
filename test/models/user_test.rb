@@ -22,5 +22,23 @@ describe User do
     end
   end
 
-  
+  describe "relations" do
+    it "has many votes" do
+      nataliya = users(:nataliya)
+      expect(nataliya.votes).must_be_kind_of Enumerable
+
+      nataliya.votes.each do |vote|
+        expect(vote).must_be_instance_of Vote
+      end
+    end
+
+    it "has many works through votes" do
+      nataliya = users(:nataliya)
+      expect(nataliya.works).must_be_kind_of Enumerable
+
+      nataliya.works.each do |work|
+        expect(work).must_be_instance_of Work
+      end
+    end
+  end
 end
