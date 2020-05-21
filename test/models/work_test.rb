@@ -88,10 +88,21 @@ describe Work do
     end
 
     it "returns a collection sorted by rating in descending order" do
+      books = Work.sort_by_votes("book")
+      expect(books.first).must_equal works(:wheel_2)
 
+      i = 0
+      while i < books.length - 2
+        expect(books[i].votes.count).must_be :>=, books[i + 1].votes.count
+        i += 1
+      end  
     end
 
     it "orders a collection by id in case of a tie between votes" do
+      books = Work.sort_by_votes("book")
+      expect(books.first.votes.count).must_equal 3
+      expect(books.first.votes.count).must_equal 3
+      expect(books.first.id).must_be :>, books.second.id
 
     end
 
