@@ -9,8 +9,6 @@ class UsersController < ApplicationController
       head :not_found
       return
     end
-
-    # @trips = @user.trips
   end
 
   def login_form
